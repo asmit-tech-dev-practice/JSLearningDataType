@@ -41,3 +41,32 @@ function factorial2(x) {
     return result;
 }
 console.log(factorial2(5));
+
+
+
+// 5 * 6 (8+9/19) + 90-7/12
+function BODMASEx(statement) {
+    if ("/") {
+
+    }
+}
+
+const array = ["5 * 6 * (8+9/19) + 90-7/12", "(8+9/19) + 5 * 6 *  90-7/12", "(8+9/19) + 90-7/5 * 6 * 12"];
+array.forEach(element => {
+    const result = BODMASEx(element);
+});
+
+
+// 5 * 6 (8+9/19) + 90-7/12
+function BODMAS(){
+    let r = divide(9,19);
+    let p = add (8, r);
+    let q = multiply (6,p);
+    let s = multiply (5,q);
+    let t = divide(7,12);
+    let u = add(s,90);
+    let result = subtract(u,t);
+
+    return result;
+}
+console.log(BODMAS());
