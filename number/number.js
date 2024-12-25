@@ -47,6 +47,7 @@ console.log(factorial2(5));
 // 5 * 6 (8+9/19) + 90-7/12
 function BODMASEx(statement) {
     if ("/") {
+        
 
     }
 }

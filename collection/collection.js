@@ -35,6 +35,11 @@ function avgSalary() {
     return result;
 }
 
+function avgSalary2(employees) {
+    const total = employees.reduce((sum, emp) => sum + emp.salary, 0);
+    return total / employees.length;
+}
+
 
 function MaxSalary() {
     let max = 0;
@@ -44,6 +49,10 @@ function MaxSalary() {
         }
     }
     return max;
+}
+
+function MaxSalary2(employees) {
+    return Math.max(...employees.map(emp => emp.salary));
 }
 
 function StandardDeviation() {
@@ -59,6 +68,12 @@ function StandardDeviation() {
     return Math.sqrt(x);
 }
 
+function StandardDeviation2(employees) {
+    const mean = avgSalary(employees);
+    const variance = employees.reduce((sum, emp) => sum + Math.pow(emp.salary - mean, 2), 0) / employees.length;
+    return Math.sqrt(variance);
+}
+
 function compare(a, b) {
     return a.salary - b.salary;
 }
@@ -71,9 +86,12 @@ let SortingSalaryVar = function SalarySort() {
 
 
 printNames(employees);
-console.log("Avg Salary " + avgSalary(employees));
-console.log("Max Salary " + MaxSalary(employees));
-console.log("Standard Deviation " + StandardDeviation(employees));
+console.log("Avg Salary (Case 2) " + avgSalary(employees));
+console.log("Max Salary (Case 2) " + MaxSalary(employees));
+console.log("Standard Deviation (Case 2) " + StandardDeviation(employees));
+console.log("Avg Salary (Case 2) " + avgSalary2(employees));
+console.log("Max Salary (Case 2) " + MaxSalary2(employees));
+console.log("Standard Deviation (Case 2) " + StandardDeviation2(employees));
 SortingSalaryVar();
 
 
