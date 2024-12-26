@@ -97,6 +97,38 @@ SortingSalaryVar();
 
 
 
+let OperationsOnEmployees = {
+    printNames3() {
+        employees.forEach(employee => console.log(`Name: ${employee.name}`));
+    },
+
+    avgSalary3() {
+        const total = employees.reduce((sum, emp) => sum + emp.salary, 0);
+        return total / employees.length;
+    },
+
+    maxSalary3() {
+        return Math.max(...employees.map(emp => emp.salary));
+    },
+
+    standardDeviation3() {
+        const mean = this.avgSalary3();
+        const variance = employees.reduce((sum, emp) => sum + Math.pow(emp.salary - mean, 2), 0) / employees.length;
+        return Math.sqrt(variance);
+    },
+
+    sortBySalary3() {
+        employees.sort((a, b) => a.salary - b.salary);
+        console.log(employees);
+    }
+};
+
+OperationsOnEmployees.printNames3();
+console.log("Avg Salary(Case 3): ", OperationsOnEmployees.avgSalary3());
+console.log("Max Salary(Case 3): ", OperationsOnEmployees.maxSalary3());
+console.log("Standard Deviation(Case 3): ", OperationsOnEmployees.standardDeviation3());
+OperationsOnEmployees.sortBySalary3();
+
 
 
 
